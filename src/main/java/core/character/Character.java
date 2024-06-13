@@ -160,10 +160,10 @@ public abstract class Character implements ComponentEvent {
         super();
         this.attackBox = null;
         this.commandExecutor = bindingCommand();
+        this.weight = 5;
         this.stateManager = bindingStateManager();
         this.colliderBox = new ColliderBox(0, 0, 50, 50);
         this.power = 10;
-        this.weight = 5;
         this.meleeDamage = 2;
         this.rangedDamage = 4;
         this.ultimateDamage = 10;
@@ -281,7 +281,7 @@ public abstract class Character implements ComponentEvent {
         this.setImageX(this.getImageX() + this.getWidth());
         this.setWidth(this.getWidth() * -1);
         this.direction = direction;
-//        this.setSpeedX(this.getSpeedX() * -1);
+
     }
 
     public void setScale(double scale) {
