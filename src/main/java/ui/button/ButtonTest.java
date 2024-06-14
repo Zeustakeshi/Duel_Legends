@@ -2,6 +2,7 @@ package ui.button;
 
 import character.buu.Buu;
 import character.pawn.Pawn;
+import character.warrior.Warrior;
 import core.ui.components.Button;
 import game.gameStateManager.GameState;
 import game.gameStateManager.GameStateManager;
@@ -29,7 +30,7 @@ public class ButtonTest extends Button {
     @Override
     public void onClick(MouseEvent e) {
         GameStateManager.setPlayer1Character(new Buu());
-        GameStateManager.setPlayer2Character(new Pawn());
+        GameStateManager.setPlayer2Character(new Warrior());
         GameStateManager.setState(GameState.PLAYING);
     }
 }
