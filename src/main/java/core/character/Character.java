@@ -15,6 +15,7 @@ import utils.ObjectDirection;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.Serial;
 
 
 @Getter
@@ -114,10 +115,7 @@ public abstract class Character implements ComponentEvent {
      * ....
      */
     protected int power;
-    /**
-     * X-coordinate position of the object.
-     */
-    protected int health;
+
     /**
      * X-coordinate position of the object.
      */
@@ -153,7 +151,16 @@ public abstract class Character implements ComponentEvent {
     @Setter(AccessLevel.PRIVATE)
     private int imageY;
 
+
+    protected int health;
+
     private int energy;
+
+    @Setter(AccessLevel.PRIVATE)
+    private int maximumHealth;
+
+    @Setter(AccessLevel.PRIVATE)
+    private int maximumEnergy;
 
 
     public Character() {
@@ -170,8 +177,10 @@ public abstract class Character implements ComponentEvent {
         this.setPosY(0);
         this.ultimateDamage = 10;
 
-        this.energy = 100;
-        this.health = 100;
+        this.maximumEnergy =100;
+        this.maximumHealth = 100;
+        this.energy = this.maximumEnergy;
+        this.health = this.maximumHealth;
         setScale(GameConstant.SCALE);
     }
 

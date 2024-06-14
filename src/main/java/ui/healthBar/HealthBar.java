@@ -22,6 +22,7 @@ public class HealthBar extends GameUI {
     private int energy;
     private ObjectDirection direction;
 
+
     public HealthBar() {
         this.image = LoadSave.loadImage("health/health_power_bar.png");
         this.imageWidth = 192;
@@ -74,19 +75,23 @@ public class HealthBar extends GameUI {
         int offsetHealthX = 32;
         int offsetHealthY = 15;
 
-        int posHealthX = this.direction == ObjectDirection.LEFT ? this.x + offsetHealthX : this.x - this.health - offsetHealthX;
 
+        int healthValue = (this.health / this.maximumHealth) * Math.abs(this.width) - 40;
+
+        int energyValue =  (this.energy / this.maximumEnergy) * Math.abs(this.width) - 80;;
+
+        int posHealthX = this.direction == ObjectDirection.LEFT ? this.x + offsetHealthX : this.x - healthValue - offsetHealthX;
         g.setColor(Color.RED);
-        g.fillRect(posHealthX, this.y + offsetHealthY, this.health,5);
+        g.fillRect(posHealthX, this.y + offsetHealthY, healthValue,5);
 
-
-        int offsetEnergyX = 42;
+        int offsetEnergyX = 45;
         int offsetEnergyY = 32;
 
-        int posEnergyX = this.direction == ObjectDirection.LEFT ? this.x + offsetEnergyX : this.x - this.health - offsetEnergyY;
+        int posEnergyX = this.direction == ObjectDirection.LEFT ? this.x + offsetEnergyX : this.x - energyValue - offsetEnergyY;
 
         g.setColor(Color.BLUE);
-        g.fillRect(posEnergyX, this.y + offsetEnergyY, this.health,5);
+        g.fillRect(posEnergyX, this.y + offsetEnergyY, energyValue,5);
+
 
     }
 
