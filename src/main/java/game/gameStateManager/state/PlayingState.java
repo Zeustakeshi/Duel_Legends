@@ -25,7 +25,6 @@ public class PlayingState implements BaseState {
     public PlayingState() {
         this.player1HealthBar = new HealthBar();
         this.player2HealthBar = new HealthBar();
-
     }
 
     public void initialHealthBar() {
@@ -57,6 +56,9 @@ public class PlayingState implements BaseState {
         player1Input.bindingCommand(KeyEvent.VK_A, CharacterCommand.TURN_LEFT);
         player1Input.bindingCommand(KeyEvent.VK_K, CharacterCommand.JUMP);
         player1Input.bindingCommand(KeyEvent.VK_J, CharacterCommand.MELEE_ATTACK);
+        player1Input.bindingCommand(KeyEvent.VK_U, CharacterCommand.RANGED_ATTACK);
+        player1Input.bindingCommand(KeyEvent.VK_I, CharacterCommand.ULTIMATE_ATTACK);
+        player1Input.bindingCommand(KeyEvent.VK_S, CharacterCommand.DEFEND);
 
         player1Input.bindingReleasedCommand(KeyEvent.VK_D, CharacterCommand.STOP_WALK);
         player1Input.bindingReleasedCommand(KeyEvent.VK_A, CharacterCommand.STOP_WALK);
@@ -66,6 +68,10 @@ public class PlayingState implements BaseState {
         player2Input.bindingCommand(KeyEvent.VK_LEFT, CharacterCommand.TURN_LEFT);
         player2Input.bindingCommand(KeyEvent.VK_NUMPAD2, CharacterCommand.JUMP);
         player2Input.bindingCommand(KeyEvent.VK_NUMPAD1, CharacterCommand.MELEE_ATTACK);
+        player2Input.bindingCommand(KeyEvent.VK_NUMPAD4, CharacterCommand.RANGED_ATTACK);
+        player2Input.bindingCommand(KeyEvent.VK_NUMPAD5, CharacterCommand.ULTIMATE_ATTACK);
+        player2Input.bindingCommand(KeyEvent.VK_DOWN, CharacterCommand.DEFEND);
+
 
         player2Input.bindingReleasedCommand(KeyEvent.VK_RIGHT, CharacterCommand.STOP_WALK);
         player2Input.bindingReleasedCommand(KeyEvent.VK_LEFT, CharacterCommand.STOP_WALK);

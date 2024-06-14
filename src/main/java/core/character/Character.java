@@ -15,7 +15,6 @@ import utils.ObjectDirection;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.Serial;
 
 
 @Getter
@@ -198,6 +197,11 @@ public abstract class Character implements ComponentEvent {
         commandExecutor.addCommand(CharacterCommand.FALL, new FallCommand());
         commandExecutor.addCommand(CharacterCommand.IDLE, new IdleCommand());
         commandExecutor.addCommand(CharacterCommand.STOP_WALK, new StopWalkCommand());
+        commandExecutor.addCommand(CharacterCommand.RANGED_ATTACK, new RangedAttackCommand());
+        commandExecutor.addCommand(CharacterCommand.ULTIMATE_ATTACK, new UltimateAttackCommand());
+        commandExecutor.addCommand(CharacterCommand.DEFEND, new DefendCommand());
+        commandExecutor.addCommand(CharacterCommand.TAKE_HIT, new TakeHitCommand());
+        commandExecutor.addCommand(CharacterCommand.DIE, new DieCommand());
 
         return commandExecutor;
     }
@@ -292,7 +296,6 @@ public abstract class Character implements ComponentEvent {
         this.setImageX(this.getImageX() + this.getWidth());
         this.setWidth(this.getWidth() * -1);
         this.direction = direction;
-
     }
 
     public void setScale(double scale) {
