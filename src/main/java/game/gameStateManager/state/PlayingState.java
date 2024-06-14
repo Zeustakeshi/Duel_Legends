@@ -32,8 +32,6 @@ public class PlayingState implements BaseState {
 
         this.player1HealthBar.setX(10);
         this.player1HealthBar.flip(ObjectDirection.LEFT);
-
-
         this.player2HealthBar.setX(GAME_WIDTH - this.player2HealthBar.getWidth() - 10);
         this.player2HealthBar.flip(ObjectDirection.RIGHT);
     }
@@ -71,6 +69,12 @@ public class PlayingState implements BaseState {
 
         player2Input.bindingReleasedCommand(KeyEvent.VK_RIGHT, CharacterCommand.STOP_WALK);
         player2Input.bindingReleasedCommand(KeyEvent.VK_LEFT, CharacterCommand.STOP_WALK);
+
+        this.player1HealthBar.setMaximumEnergy(player1.getMaximumEnergy());
+        this.player1HealthBar.setMaximumHealth(player1.getMaximumHealth());
+
+        this.player2HealthBar.setMaximumEnergy(player2.getMaximumEnergy());
+        this.player2HealthBar.setMaximumHealth(player2.getMaximumHealth());
 
         initialHealthBar();
     }

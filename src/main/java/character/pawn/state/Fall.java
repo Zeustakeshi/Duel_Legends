@@ -14,7 +14,6 @@ public class Fall extends FallState<Pawn> {
         super.enter();
 
         character.setFrameY(4);
-
     }
 
     @Override
