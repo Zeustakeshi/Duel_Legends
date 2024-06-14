@@ -206,6 +206,13 @@ public abstract class Character implements ComponentEvent {
         return commandExecutor;
     }
 
+    public void die () {
+        this.speedX = 0;
+        this.speedY = 0;
+        this.health = 0;
+        this.energy = 0;
+    }
+
     public void draw(Graphics g) {
         BufferedImage subImage = this.image.getSubimage(
                 this.imageWidth * this.frameX,
