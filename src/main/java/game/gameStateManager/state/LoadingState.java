@@ -1,5 +1,7 @@
 package game.gameStateManager.state;
 
+import character.buu.Buu;
+import core.character.Character;
 import core.ui.components.ProcessBar;
 import game.gameStateManager.GameState;
 import game.gameStateManager.GameStateManager;

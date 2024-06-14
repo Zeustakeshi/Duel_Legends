@@ -14,8 +14,8 @@ import java.awt.event.MouseEvent;
 import static constant.GameConstant.GAME_WIDTH;
 
 public class PlayingState implements BaseState {
-    private HealthBar player1HealthBar;
-    private HealthBar player2HealthBar;
+    private final HealthBar player1HealthBar;
+    private final HealthBar player2HealthBar;
     private Character player1;
     private Character player2;
     private InputHandler player1Input;
@@ -29,7 +29,6 @@ public class PlayingState implements BaseState {
     }
 
     public void initialHealthBar() {
-
 
         this.player1HealthBar.setX(10);
         this.player1HealthBar.flip(ObjectDirection.LEFT);
@@ -76,6 +75,12 @@ public class PlayingState implements BaseState {
         initialHealthBar();
     }
 
+    private void updateHealth () {
+        this.player1HealthBar.setHealth(player1.getHealth());
+        this.player1HealthBar.setEnergy(player1.getEnergy());
+        this.player2HealthBar.setHealth(player2.getHealth());
+        this.player2HealthBar.setEnergy(player2.getEnergy());
+    }
 
     @Override
     public void update() {
@@ -83,6 +88,8 @@ public class PlayingState implements BaseState {
         player2HealthBar.update();
         player1.update();
         player2.update();
+
+        updateHealth();
     }
 
     @Override

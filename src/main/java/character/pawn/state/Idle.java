@@ -15,6 +15,8 @@ public class Idle extends IdleState<Pawn> {
 
         character.setFrameX(0);
         character.setFrameY(0);
+        character.setMaxFrameX(6);
+
     }
 
     @Override
@@ -22,4 +24,3 @@ public class Idle extends IdleState<Pawn> {
         super.update();
     }
 }
-
