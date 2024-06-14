@@ -70,7 +70,26 @@ public class HealthBar extends GameUI {
                 null
         );
 
+
+        int offsetHealthX = 32;
+        int offsetHealthY = 15;
+
+        int posHealthX = this.direction == ObjectDirection.LEFT ? this.x + offsetHealthX : this.x - this.health - offsetHealthX;
+
+        g.setColor(Color.RED);
+        g.fillRect(posHealthX, this.y + offsetHealthY, this.health,5);
+
+
+        int offsetEnergyX = 42;
+        int offsetEnergyY = 32;
+
+        int posEnergyX = this.direction == ObjectDirection.LEFT ? this.x + offsetEnergyX : this.x - this.health - offsetEnergyY;
+
+        g.setColor(Color.BLUE);
+        g.fillRect(posEnergyX, this.y + offsetEnergyY, this.health,5);
+
     }
+
 
     @Override
     public void update() {

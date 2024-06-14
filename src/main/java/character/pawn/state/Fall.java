@@ -13,7 +13,6 @@ public class Fall extends FallState<Pawn> {
     public void enter() {
         super.enter();
 
-        character.setFrameX(0);
         character.setFrameY(4);
 
     }

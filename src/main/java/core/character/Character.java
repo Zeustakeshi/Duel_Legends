@@ -166,6 +166,8 @@ public abstract class Character implements ComponentEvent {
         this.power = 10;
         this.meleeDamage = 2;
         this.rangedDamage = 4;
+        this.setSpeedX(0);
+        this.setPosY(0);
         this.ultimateDamage = 10;
 
         this.energy = 100;
